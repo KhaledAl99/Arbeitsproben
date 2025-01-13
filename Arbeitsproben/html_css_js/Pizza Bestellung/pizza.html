@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Bestellung</title>
+    <link rel="stylesheet" href="pizza.css">
+    <script>
+        function updatePizzaPrice() {
+            let pizzaPrice = 0;
+            if (document.getElementById('small').checked) {
+                pizzaPrice = 7.00;
+            } else if (document.getElementById('large').checked) {
+                pizzaPrice = 9.00;
+            }
+            document.getElementById('pizzaPrice').value = pizzaPrice.toFixed(2);
+            updateTotal();
+        }
+
+        function updateToppingPrice() {
+            let salamiPrice = document.getElementById('salami').checked ? 0.50 : 0;
+            let hamPrice = document.getElementById('ham').checked ? 0.40 : 0;
+            let peppersPrice = document.getElementById('peppers').checked ? 0.40 : 0;
+            let mushroomsPrice = document.getElementById('mushrooms').checked ? 0.30 : 0;
+
+            document.getElementById('salamiPrice').value = salamiPrice > 0 ? salamiPrice.toFixed(2) : '';
+            document.getElementById('hamPrice').value = hamPrice > 0 ? hamPrice.toFixed(2) : '';
+            document.getElementById('peppersPrice').value = peppersPrice > 0 ? peppersPrice.toFixed(2) : '';
+            document.getElementById('mushroomsPrice').value = mushroomsPrice > 0 ? mushroomsPrice.toFixed(2) : '';
+            updateTotal();
+        }
+
+        function updateTotal() {
+            let pizzaPrice = parseFloat(document.getElementById('pizzaPrice').value) || 0;
+            let salamiPrice = parseFloat(document.getElementById('salamiPrice').value) || 0;
+            let hamPrice = parseFloat(document.getElementById('hamPrice').value) || 0;
+            let peppersPrice = parseFloat(document.getElementById('peppersPrice').value) || 0;
+            let mushroomsPrice = parseFloat(document.getElementById('mushroomsPrice').value) || 0;
+            let tip = parseFloat(document.getElementById('tip').value) || 0;
+            let total = pizzaPrice + salamiPrice + hamPrice + peppersPrice + mushroomsPrice + tip;
+            document.getElementById('total').value = total.toFixed(2);
+        }
+
+        function placeOrder() {
+            let total = document.getElementById('total').value;
+            let message = `Vielen Dank für Ihre Bestellung in Höhe von ${total} €`;
+            document.getElementById('thankyou-message').innerText = message;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Pizza Bestellung</h1>
+    <div class="container">
+        <table>
+            <tr>
+                <td class="left-column">
+                    <img src="pizza.png" alt="Pizza Bild" width="200">
+                </td>
+                <td class="right-column">
+                    <form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="radio" id="small" name="pizza" value="small"
+                                        onclick="updatePizzaPrice()"> Kleine Pizza (7,00 €)<br>
+                                    <input type="radio" id="large" name="pizza" value="large"
+                                        onclick="updatePizzaPrice()"> Große Pizza (9,00 €)
+                                </td>
+                                <td class="right-align"><input type="text" id="pizzaPrice" class="output" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="salami" onclick="updateToppingPrice()"> Salami (0,50 €)
+                                </td>
+                                <td class="right-align"><input type="text" id="salamiPrice" class="output" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="ham" onclick="updateToppingPrice()"> Schinken (0,40 €)
+                                </td>
+                                <td class="right-align"><input type="text" id="hamPrice" class="output" readonly></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="peppers" onclick="updateToppingPrice()"> Paprika (0,40 €)
+                                </td>
+                                <td class="right-align"><input type="text" id="peppersPrice" class="output" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="mushrooms" onclick="updateToppingPrice()"> Champignons
+                                    (0,30 €)</td>
+                                <td class="right-align"><input type="text" id="mushroomsPrice" class="output" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="tip">Trinkgeld:</label></td>
+                                <td class="right-align"><input type="number" id="tip" class="output"
+                                        oninput="updateTotal()" style="background-color: white;"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="total">Gesamtsumme:</label></td>
+                                <td class="right-align"><input type="text" id="total" class="output" readonly></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="right-align"><button type="button" onclick="placeOrder()">Bestellen</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="thankyou-message"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
