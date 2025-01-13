@@ -1,0 +1,36 @@
+@startuml
+class com.itextpdf.text.BaseColor
+class com.itextpdf.text.Paragraph
+class com.itextpdf.text.Phrase
+class com.itextpdf.text.pdf.PdfPCell
+class com.itextpdf.text.pdf.PdfPTable
+class com.itextpdf.text.pdf.PdfWriter
+class com.mysql.cj.conf.ConnectionPropertiesTransform
+class common.OpenPdf
+class dao.ConnectionProvider
+class dao.InventoryUtils
+class dao.tables
+class highspeed.guis.Home
+class highspeed.guis.Login
+class highspeed.guis.ManageCategory
+class highspeed.guis.ManageCustomer
+class highspeed.guis.ManageOrder
+class highspeed.guis.ManageProduct
+class highspeed.guis.ManageUser
+class highspeed.guis.ViewOrders
+class highspeed.sales.it.Customer
+class highspeed.sales.it.HighSpeedSalesIT
+class java.awt.Color
+class java.io.File
+class java.io.FileOutputStream
+class java.sql.Connection
+class java.sql.DriverManager
+class java.sql.Statement
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Calendar
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+class javax.swing.table.DefaultTableModel
+class javax.swing.table.TableModel
+@enduml

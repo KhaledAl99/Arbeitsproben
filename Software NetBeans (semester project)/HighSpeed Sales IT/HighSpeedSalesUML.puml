@@ -1,0 +1,91 @@
+@startuml
+annotation java.lang.SuppressWarnings
+class com.itextpdf.text.BaseColor
+class com.itextpdf.text.Paragraph
+class com.itextpdf.text.Phrase
+class com.itextpdf.text.pdf.PdfPCell
+class com.itextpdf.text.pdf.PdfPTable
+class com.itextpdf.text.pdf.PdfWriter
+class com.mysql.cj.conf.ConnectionPropertiesTransform
+class common.OpenPdf
+class dao.ConnectionProvider
+class dao.InventoryUtils
+class highspeed.guis.Home
+class highspeed.guis.Login
+class highspeed.guis.ManageCategory
+class highspeed.guis.ManageCustomer
+class highspeed.guis.ManageOrder
+class highspeed.guis.ManageProduct
+class highspeed.guis.ManageUser
+class highspeed.guis.ViewOrders
+class highspeed.sales.it.Customer
+class java.awt.Color
+class java.io.FileOutputStream
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Calendar
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+class javax.swing.table.DefaultTableModel
+class javax.swing.table.TableModel
+highspeed.guis.Home ..> java.lang.SuppressWarnings
+highspeed.guis.Home --|> javax.swing.JFrame
+highspeed.guis.Home ..> javax.swing.JOptionPane
+highspeed.guis.Login ..> java.lang.SuppressWarnings
+highspeed.guis.Login ..> dao.ConnectionProvider
+highspeed.guis.Login --|> javax.swing.JFrame
+highspeed.guis.Login ..> javax.swing.JOptionPane
+highspeed.guis.ManageCategory ..> java.lang.SuppressWarnings
+highspeed.guis.ManageCategory ..> dao.ConnectionProvider
+highspeed.guis.ManageCategory --|> javax.swing.JFrame
+highspeed.guis.ManageCategory ..> javax.swing.JOptionPane
+highspeed.guis.ManageCategory ..> javax.swing.table.DefaultTableModel
+highspeed.guis.ManageCategory ..> javax.swing.table.TableModel
+highspeed.guis.ManageCustomer ..> java.lang.SuppressWarnings
+highspeed.guis.ManageCustomer ..> dao.ConnectionProvider
+highspeed.guis.ManageCustomer --|> javax.swing.JFrame
+highspeed.guis.ManageCustomer ..> javax.swing.JOptionPane
+highspeed.guis.ManageCustomer ..> javax.swing.table.DefaultTableModel
+highspeed.guis.ManageCustomer ..> javax.swing.table.TableModel
+highspeed.guis.ManageOrder ..> java.lang.SuppressWarnings
+highspeed.guis.ManageOrder ..> com.itextpdf.text.BaseColor
+highspeed.guis.ManageOrder ..> com.itextpdf.text.Paragraph
+highspeed.guis.ManageOrder ..> com.itextpdf.text.Phrase
+highspeed.guis.ManageOrder ..> com.itextpdf.text.pdf.PdfPCell
+highspeed.guis.ManageOrder ..> com.itextpdf.text.pdf.PdfPTable
+highspeed.guis.ManageOrder ..> com.itextpdf.text.pdf.PdfWriter
+highspeed.guis.ManageOrder ..> common.OpenPdf
+highspeed.guis.ManageOrder ..> dao.ConnectionProvider
+highspeed.guis.ManageOrder ..> dao.InventoryUtils
+highspeed.guis.ManageOrder ..> java.awt.Color
+highspeed.guis.ManageOrder ..> java.io.FileOutputStream
+highspeed.guis.ManageOrder ..> java.text.SimpleDateFormat
+highspeed.guis.ManageOrder ..> java.util.Calendar
+highspeed.guis.ManageOrder --|> javax.swing.JFrame
+highspeed.guis.ManageOrder ..> javax.swing.JOptionPane
+highspeed.guis.ManageOrder ..> javax.swing.table.DefaultTableModel
+highspeed.guis.ManageOrder ..> javax.swing.table.TableModel
+highspeed.guis.ManageProduct ..> java.lang.SuppressWarnings
+highspeed.guis.ManageProduct ..> dao.ConnectionProvider
+highspeed.guis.ManageProduct --|> javax.swing.JFrame
+highspeed.guis.ManageProduct ..> javax.swing.JOptionPane
+highspeed.guis.ManageProduct ..> javax.swing.table.DefaultTableModel
+highspeed.guis.ManageProduct ..> javax.swing.table.TableModel
+highspeed.guis.ManageUser ..> java.lang.SuppressWarnings
+highspeed.guis.ManageUser ..> dao.ConnectionProvider
+highspeed.guis.ManageUser ..> java.awt.Color
+highspeed.guis.ManageUser --|> javax.swing.JFrame
+highspeed.guis.ManageUser ..> javax.swing.JOptionPane
+highspeed.guis.ManageUser ..> javax.swing.table.DefaultTableModel
+highspeed.guis.ManageUser ..> javax.swing.table.TableModel
+highspeed.guis.ViewOrders ..> java.lang.SuppressWarnings
+highspeed.guis.ViewOrders ..> com.mysql.cj.conf.ConnectionPropertiesTransform
+highspeed.guis.ViewOrders ..> common.OpenPdf
+highspeed.guis.ViewOrders ..> dao.ConnectionProvider
+highspeed.guis.ViewOrders ..> highspeed.sales.it.Customer
+highspeed.guis.ViewOrders ..> java.util.ArrayList
+highspeed.guis.ViewOrders --|> javax.swing.JFrame
+highspeed.guis.ViewOrders ..> javax.swing.JOptionPane
+highspeed.guis.ViewOrders ..> javax.swing.table.DefaultTableModel
+highspeed.guis.ViewOrders ..> javax.swing.table.TableModel
+@enduml
